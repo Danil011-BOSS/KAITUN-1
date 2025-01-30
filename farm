@@ -1,7 +1,7 @@
-script_key="UQOxwarJNcnNhGdRbwNKOWkJyTiVDcFI";
+script_key="NwhWsZTKEsUkEIcBbtVURsqxBAeRLkXr";
 
 getgenv().petsGoConfig = {
-    IGNORE_FULL_CHARGE_MEGA_EGG = true,
+    IGNORE_FULL_CHARGE_MEGA_EGG = false,
 
     CONSUME_CORRUPTED_HUGE_BAIT = true,
     CONSUME_ALL_ENCHANT_SAFE = true,
@@ -16,15 +16,26 @@ getgenv().petsGoConfig = {
 
     DIAMOND_EGG = true,  -- true = Diamond Egg, false = F2P Egg
     
-    -- Allowed enchant keywords : Criticals, Loot, Speed, Strength, Chests, Diamonds, Huges, Lightning, TNT
-    PICKAXE_ENCHANTS = {"Loot", "Strength", "Diamonds"},
+    PICKAXE_ENCHANTS = {"Speed", "Loot", "Criticals"},
     
     MAILING = true,  -- Auto mail
     MAIL_FISHING_ROD = false,  -- true = mail, false = keep fishing rod on account (FASTER Fishing)
-    MAIL_WEBHOOK_ODDS = 1000000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 500000000,  -- Minimum Pet Odds To Mail
-    USERNAME_TO_MAIL = {"Zarban2646"} -- Mail to username, Example : USERNAME_TO_MAIL = {"username1", "username2"}
-}
+    MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
+    MAIL_PET_ODDS = 2000000000,  -- Minimum Pet Odds To Mail
+    MAIL_GEMS_MIN = 1,  -- Minimum Gems to mail out
 
+    MIN_MAIL_AMOUNT = {  -- Rare items not listed, default min 1
+      INSTA_POTION_IV = 5,
+      CORRUPTED_HUGE_BAIT = 20,
+      CRYSTAL_KEY = 5, CRYSTAL_KEY_UPPER_HALF = 20, CRYSTAL_KEY_LOWER_HALF = 20,
+      EXCLUSIVE_TREASURE_CHEST = 5, ABYSSAL_TREASURE_CHEST = 5,
+      CELESTIAL_MINING_CHEST = 5, RUNIC_MINING_CHEST = 5,
+      CELESTIAL_ENCHANT_SAFE = 1,
+      -- Event
+      HUGE_CHARGE_TOKEN = 10, TITANIC_CHARGE_TOKEN = 5,
+      EVENT_GIFT_BAG = 5,
+    },  
+USERNAME_TO_MAIL = {"BQPED"} -- Mail to username, Example : USERNAME_TO_MAIL = {"username1", "username2"} 
+}
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
